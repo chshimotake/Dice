@@ -9,6 +9,7 @@ void draw()
 	clearScreen();
 	int x=150;
 	int y=150;
+	int z=300;
 	for (int k = 1; k < 4; k++) {
 		for (int c = 1; c < 4; c++) {
 			Die die=new Die((k*300)-x, (c*300)-y);
@@ -34,12 +35,13 @@ void clearScreen()
 class Die //models one single dice cube
 {
 	//variable declarations here
-	int x, y,rollOne;
-	Die(int blah, int bleh) 
+	int x, y,rollOne, diceSide;
+	Die(int blah, int bleh, int bluh) 
 	//constructor
 	{
 		x=blah;
 		y=bleh;
+		diceSide=bluh;
 		rollOne=(int)(Math.random()*6+1);//variable initializations here
 	}
 	void roll()
@@ -48,37 +50,37 @@ class Die //models one single dice cube
 		switch(rollOne)
 		{
 			case 1:
-				ellipse(x, y, 50, 50);
+				ellipse(x, y, diceSide/6, diceSide/6);
 			break;
 			case 2:
-				ellipse(x-75, y-75, 50, 50);
-				ellipse(x+75, y+75, 50, 50);
+				ellipse(x-diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
 			break;
 			case 3:	
-				ellipse(x-75, y-75, 50, 50);
-				ellipse(x+75, y+75, 50, 50);
-				ellipse(x, y, 50, 50);
+				ellipse(x-diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x, y, diceSide/6, diceSide/6);
 			break;
 			case 4:
-				ellipse(x-75, y-75, 50, 50);
-				ellipse(x-75, y+75, 50, 50);
-				ellipse(x+75, y-75, 50, 50);
-				ellipse(x+75, y+75, 50, 50);
+				ellipse(x-diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x-diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
 			break;
 			case 5:
-				ellipse(x-75, y-75, 50, 50);
-				ellipse(x-75, y+75, 50, 50);
-				ellipse(x+75, y-75, 50, 50);
-				ellipse(x+75, y+75, 50, 50);
-				ellipse(x, y, 50, 50);
+				ellipse(x-diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x-diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x, y, diceSide/6, diceSide/6);
 			break;
 			case 6:
-				ellipse(x-75, y-75, 50, 50);
-				ellipse(x-75, y+75, 50, 50);
-				ellipse(x+75, y-75, 50, 50);
-				ellipse(x+75, y+75, 50, 50);
-				ellipse(x-75, y, 50, 50);
-				ellipse(x+75, y, 50, 50);
+				ellipse(x-diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x-diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y-diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y+diceSide/4, diceSide/6, diceSide/6);
+				ellipse(x-diceSide/4, y, diceSide/6, diceSide/6);
+				ellipse(x+diceSide/4, y, diceSide/6, diceSide/6);
 			break;
 		}
 		//your code here

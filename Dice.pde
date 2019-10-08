@@ -10,12 +10,23 @@ void draw()
 	int x=150;
 	int y=150;
 	int z=300;
-	for (int k = 1; k < 4; k++) {
+	Die die=new Die((0)+x, (0)+y, 300);
+	die.show();
+	die.roll();
+	for(int i=0;i<3;i++)
+	{
+		for(int n=0;n<6;n++)
+		{
+			text("x", n*100+10, i*100+10);
+		}
+	}
+	println(1234/10);
+	/*for (int k = 1; k < 4; k++) {
 		for (int c = 1; c < 4; c++) {
 			Die die=new Die((k*300)-x, (c*300)-y);
 			die.roll();
 		}
-	}
+	}*/
 	//your code here
 }
 void mousePressed()
@@ -26,11 +37,11 @@ void clearScreen()
 {
 	fill(255, 255, 255);
 	rect(0, 0, 900, 900);
-	stroke(0, 0, 0);
+	/*stroke(0, 0, 0);
 	line(300, 0, 300, 900);
 	line(600, 0, 600, 900);
 	line(0, 300, 900, 300);
-	line(0, 600, 900, 600);
+	line(0, 600, 900, 600);*/
 }
 class Die //models one single dice cube
 {
@@ -87,6 +98,9 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
+		fill(0,0,0);
+		rect(x, y, diceSide, diceSide);
+		fill(255,255,255);
+		rect(x-1,y+1,diceSide-2,diceSide-2);
 	}
 }

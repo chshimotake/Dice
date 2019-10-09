@@ -1,7 +1,7 @@
 void setup()
 {
 	background(255, 255, 255);
-	size(900, 900);
+	size(2000, 900);
 	noLoop();
 }
 void draw()
@@ -10,16 +10,23 @@ void draw()
 	int x=150;
 	int y=150;
 	int z=300;
-	Die die=new Die((0)+x, (0)+y, 300);
-	die.show();
-	die.roll();
-	for(int i=0;i<3;i++)
+	//Die die=new Die((0)+x, (0)+y, 300);
+	for(int w=0;w<width;w+=50)
+	{
+		for(int l=0;l<height;l+=50)
+		{
+			Die die=new Die(w+20, l+20, 40);
+			die.show();
+			die.roll();
+		}
+	}
+	/*for(int i=0;i<3;i++)
 	{
 		for(int n=0;n<6;n++)
 		{
 			text("x", n*100+10, i*100+10);
 		}
-	}
+	}*/
 	println(1234/10);
 	/*for (int k = 1; k < 4; k++) {
 		for (int c = 1; c < 4; c++) {
@@ -99,8 +106,8 @@ class Die //models one single dice cube
 	void show()
 	{
 		fill(0,0,0);
-		rect(x, y, diceSide, diceSide);
+		rect(x-diceSide/2, y-diceSide/2, diceSide, diceSide);
 		fill(255,255,255);
-		rect(x-1,y+1,diceSide-2,diceSide-2);
+		rect(x+1-diceSide/2,y+1-diceSide/2,diceSide-2,diceSide-2);
 	}
 }

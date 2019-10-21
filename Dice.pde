@@ -2,7 +2,7 @@ int total=0;
 void setup()
 {
 	background(255, 255, 255);
-	size(2000, 900);
+	size(500, 500);
 	noLoop();
 }
 void draw()
@@ -14,9 +14,9 @@ void draw()
 	int y=150;
 	int z=300;
 	//Die die=new Die((0)+x, (0)+y, 300);
-	for(int w=0;w<width;w+=50)
+	for(int w=0;w<mouseX;w+=50)
 	{
-		for(int l=0;l<height;l+=50)
+		for(int l=0;l<mouseY;l+=50)
 		{
 			Die die=new Die(w+20, l+20, 40);
 			die.show();
@@ -38,9 +38,10 @@ void draw()
 		}
 	}*/
 	//your code here
-	textSize(30);
+	textSize(20);
 	fill(255,0,0);
-	text("Total: "+total, width/2-30, height/2-10);
+	text("Total: "+total, width/2-50, height/2-50);
+	text("Move the mouse and click", width/2-120, 400);
 }
 void mousePressed()
 {

@@ -1,3 +1,4 @@
+int total=0;
 void setup()
 {
 	background(255, 255, 255);
@@ -7,6 +8,8 @@ void setup()
 void draw()
 {
 	clearScreen();
+	total=0;
+	
 	int x=150;
 	int y=150;
 	int z=300;
@@ -18,6 +21,7 @@ void draw()
 			Die die=new Die(w+20, l+20, 40);
 			die.show();
 			die.roll();
+			total+=die.rollOne;
 		}
 	}
 	/*for(int i=0;i<3;i++)
@@ -27,7 +31,6 @@ void draw()
 			text("x", n*100+10, i*100+10);
 		}
 	}*/
-	println(1234/10);
 	/*for (int k = 1; k < 4; k++) {
 		for (int c = 1; c < 4; c++) {
 			Die die=new Die((k*300)-x, (c*300)-y);
@@ -35,6 +38,9 @@ void draw()
 		}
 	}*/
 	//your code here
+	textSize(30);
+	fill(255,0,0);
+	text("Total: "+total, width/2-30, height/2-10);
 }
 void mousePressed()
 {

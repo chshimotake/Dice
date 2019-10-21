@@ -41,7 +41,6 @@ void draw()
 	textSize(20);
 	fill(255,0,0);
 	text("Total: "+total, width/2-50, height/2-50);
-	text("Move the mouse and click", width/2-120, 400);
 }
 void mousePressed()
 {
